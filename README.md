@@ -30,7 +30,7 @@ This ensures transparency, efficiency, and trust among group members.
 ##  Repository URL
 [https://github.com/refilwemosarwe/Motshelo-Tracker](https://github.com/refilwemosarwe/Motshelo-Tracker)
 
-## Features (Planned)
+## Features
 - Member registration and contribution tracking
 - Payout scheduling and history
 - Automated reporting
