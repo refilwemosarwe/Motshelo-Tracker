@@ -34,7 +34,8 @@ This ensures transparency, efficiency, and trust among group members.
 - Payout scheduling and history
 - Automated reporting
 - Exportable summaries for meetings
-
+- Interactive menu-driven interface
+  
 ## Expected Outcomes
 - Improved efficiency in managing group finances
 - Transparent records that build trust among members
