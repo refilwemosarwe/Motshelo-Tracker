@@ -5,7 +5,6 @@ This project is a simple system designed to help community savings groups (*Mots
 
 ## Objectives
 - Record member contributions on a weekly or monthly basis.
-- Track pooled funds and disbursements to members.
 - Provide clear summaries of balances, contributions, and payouts.
 - Improve accountability and reduce manual bookkeeping errors.
 
