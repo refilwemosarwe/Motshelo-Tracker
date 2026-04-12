@@ -1,1 +1,1 @@
-package com.ub.motshelocontributionstracker.contribution
+package com.ub.motshelocontributionstracker.contribution;
