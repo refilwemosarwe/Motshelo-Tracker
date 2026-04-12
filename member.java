@@ -19,7 +19,7 @@ public class Member {
 
     public void contribute(double amount) {
         if (amount > 0) {
-            totalContributions = amount;
+            totalContributions += amount;
         }
     }
 }
