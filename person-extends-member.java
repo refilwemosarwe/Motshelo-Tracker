@@ -6,7 +6,7 @@ public class Person extends Member {
     private String phoneNumber;
 
     public Person(String memberId, String name, String phoneNumber) {
-        super(memberId);  // call Member constructor
+        super(memberId); 
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
