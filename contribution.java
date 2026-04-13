@@ -1,7 +1,7 @@
-public class contribution {
+public class Contribution {
     private double amount;
 
-    public contribution(double amount) {
+    public Contribution(double amount) {
         if (amount > 0) {
             this.amount = amount;
         } else {
