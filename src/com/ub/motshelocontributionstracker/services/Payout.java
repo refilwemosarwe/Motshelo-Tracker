@@ -34,6 +34,6 @@ public class Payout
     @Override
     public String toString()
     {
-        return "Payout (Member:" + member.getMemberId() + ", Amount:" + amount + ")";
+        return "Payout (Member:" + member.getMemberId() + "-" + member.getName() + ", Amount: P" + amount + ")";
     }
 }
