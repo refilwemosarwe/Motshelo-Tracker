@@ -14,7 +14,7 @@ public class Payout
 
         if (amount <= 0)
         {
-            throw new IllegalArgumentException("Amount cannot be negative");
+            throw new IllegalArgumentException("Amount must be positive");
         }
 
         this.member = member;
