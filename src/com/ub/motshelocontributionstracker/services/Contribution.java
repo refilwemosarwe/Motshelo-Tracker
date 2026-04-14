@@ -1,4 +1,4 @@
-package com.ub.motshelocontributionstracker.contribution;
+package com.ub.motshelocontributionstracker.services;
 public class Contribution {
     private double amount;
 
