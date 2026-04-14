@@ -2,11 +2,10 @@ public class Contribution {
     private double amount;
 
     public Contribution(double amount) {
-        if (amount > 0) {
-            this.amount = amount;
-        } else {
-            System.out.println("Error: Contribution amount must be positive.");
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be positive");
         }
+        this.amount = amount;
     }
 
     public double getAmount() {
@@ -15,6 +14,6 @@ public class Contribution {
 
     @Override
     public String toString() {
-        return "contribution [amount=" + amount + "]";
+        return "Contribution [amount=" + amount + "]";
     }
 }
