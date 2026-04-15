@@ -1,26 +1,40 @@
 package com.ub.motshelocontributionstracker.services;
 
-public class Contribution
-{
-    private double amount;
-    
-        public Contribution(double amount)
-        {
-            if (amount <= 0)
-            {
-                throw new IllegalArgumentException("Amount must be positive");
-            }
-                this.amount = amount;
-        }
-    
-        public double getAmount()
-        {
-            return amount;
-        }
+import java.util.ArrayList;
+import java.util.List;
 
+public class ContributionLog {
+    private List<Contribution> contributions;
+
+    public ContributionLog() {
+        this.contributions = new ArrayList<>();
+    }
+
+    
+    public void addContribution(Contribution contribution) {
+        contributions.add(contribution);
+    }
+
+    
+    public List<Contribution> getContributions() {
+        return contributions;
+    }
+
+    
+    public double getTotalAmount() {
+        return contributions.stream()
+                            .mapToDouble(Contribution:getAmount)
+                            .sum();
+    }
+
+    
     @Override
-    public String toString()
-    {
-        return "Contribution [amount=" + amount + "]";
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Contribution Log:\n");
+        for (Contribution c : contributions) {
+            sb.append(c).append("\n");
+        }
+        sb.append("Total: ").append(getTotalAmount());
+        return sb.toString();
     }
 }
