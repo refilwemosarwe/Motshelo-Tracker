@@ -7,6 +7,8 @@ This project is a simple system designed to help community savings groups (*Mots
 - Record member contributions on a weekly or monthly basis.
 - Provide clear summaries of balances, contributions, and payouts.
 - Improve accountability and reduce manual bookkeeping errors.
+- Improved efficiency in managing group finances.
+- Transparent records that build trust among members.
 
 ## Group Members
 - Refilwe Mosarwe 202400162
@@ -35,10 +37,8 @@ This ensures transparency, efficiency, and trust among group members.
 - Automated reporting
 - Exportable summaries for meetings
 - Interactive menu-driven interface
-  
-## Expected Outcomes
-- Improved efficiency in managing group finances
-- Transparent records that build trust among members
+
+
   
 
 
