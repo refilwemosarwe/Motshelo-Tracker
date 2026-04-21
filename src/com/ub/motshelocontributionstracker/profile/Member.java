@@ -12,8 +12,7 @@ public class Member extends Person
         this.memberId = memberId;
     }
 
-    public int getMemberId()
-    {
+    public int getMemberId(){
         return memberId;
     }
 
