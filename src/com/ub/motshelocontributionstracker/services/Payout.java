@@ -2,14 +2,14 @@ package com.ub.motshelocontributionstracker.services;
 import com.ub.motshelocontributionstracker.profile.Member;
 
 /**
- * Represents a financial payout distributed to a specific Motshelo member.
+ * Represents a financial payout distributed to a specific Motshelo member
  */
 public class Payout
 {
     private double amount;
     private Member member;
     /**
-     * Initializes a payout with validation for existence of member and positive funds.
+     * Initializes a payout with validation for existence of member and positive funds
      */
     public Payout(Member member, double amount)
     {
@@ -40,7 +40,7 @@ public class Payout
     }
 
     /**
-     * Returns a formatted summary of the payout, including Member ID and currency (Pula).
+     * Returns a formatted summary of the payout, including Member ID and currency (Pula)
      */
     @Override
     public String toString()
