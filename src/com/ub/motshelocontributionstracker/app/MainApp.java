@@ -24,7 +24,7 @@ public class MainApp{
             System.out.println("5. Exit");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // newline
+            scanner.nextLine(); // nextline
 
             switch (choice) {
                 case 1:
