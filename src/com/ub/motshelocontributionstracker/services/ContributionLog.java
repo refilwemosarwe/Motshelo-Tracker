@@ -23,7 +23,7 @@ public class ContributionLog {
     
     public double getTotalAmount() {
         return contributions.stream()
-                            .mapToDouble(Contribution:getAmount)
+                            .mapToDouble(Contribution::getAmount)
                             .sum();
     }
 
