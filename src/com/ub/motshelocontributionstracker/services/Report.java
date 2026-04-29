@@ -1,6 +1,7 @@
 package com.ub.motshelocontributionstracker.services;
 
 import com.ub.motshelocontributionstracker.profile.Member;
+import com.ub.motshelocontributionstracker.services.Payout;
 import java.util.List;
 
 public class Report 
@@ -66,7 +67,6 @@ public class Report
         }
     }
 
-    (simple rotation logic)
     public void showNextRecipient() 
     {
         System.out.println("\n=== NEXT RECIPIENT ===");
@@ -76,9 +76,8 @@ public class Report
             System.out.println("No members available.");
             return;
         }
-
-        int index = payouts.size() % members.size();
-        Member next = members.get(index);
+        
+        Member next = group.getNextPayoutMember();
 
         System.out.println("Next: " + next.getName() + " (ID: " + next.getMemberId() + ")");
     }
