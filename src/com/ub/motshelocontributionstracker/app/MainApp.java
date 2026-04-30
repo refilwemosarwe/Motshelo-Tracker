@@ -65,7 +65,7 @@ public class MainApp{
 
                 case 4:
                     for (Member m : members) {
-                        System.out.println(m.getName() + " contributed: P" + m.getTotalContribution());
+                        System.out.println(m.getName() + " contributed: P" + m.getTotalContributions());
                     }
                     break;
 
