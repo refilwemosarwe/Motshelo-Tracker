@@ -1,5 +1,13 @@
 package com.ub.motshelocontributionstracker.app;
 
+import com.ub.motshelocontributionstracker.profile.Member;
+import com.ub.motshelocontributionstracker.profile.Person;
+import com.ub.motshelocontributionstracker.services.Contribution;
+import com.ub.motshelocontributionstracker.services.ContributionLog;
+import com.ub.motshelocontributionstracker.services.Payout;
+import com.ub.motshelocontributionstracker.services.MotsheloGroup;
+import com.ub.motshelocontributionstracker.services.Report;
+    
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
