@@ -38,7 +38,7 @@ public class MainApp{
                 case 1:
                     System.out.print("Enter member name: ");
                     String name = scanner.nextLine();
-                    members.add(new Member(name));
+                    members.add(new Member(1, name, "default", 0.0));
                     System.out.println(name + " added successfully.");
                     break;
 
