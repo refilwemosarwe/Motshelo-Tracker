@@ -8,11 +8,13 @@ public class Report
 {
     private List<Member> members;
     private List<Payout> payouts;
-
-    public Report(List<Member> members, List<Payout> payouts) 
+    private MotsheloGroup group;
+    
+    public Report(List<Member> members, List<Payout> payouts, MotsheloGroup group) 
     {
         this.members = members;
         this.payouts = payouts;
+        this.group = group;
     }
 
     public void showAllMembers() 
