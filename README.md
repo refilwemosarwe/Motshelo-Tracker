@@ -31,6 +31,12 @@ Which ensures transparency, efficiency, and trust among group members.
 ##  Repository URL
 [https://github.com/refilwemosarwe/Motshelo-Tracker](https://github.com/refilwemosarwe/Motshelo-Tracker)
 
+## Command Prompt
+javac -d out src\com\ub\motshelocontributionstracker\profile\*.java src\com\ub\motshelocontributionstracker\services\*.java src\com\ub\motshelocontributionstracker\app\MainApp.java
+
+## Execution Promt
+java -cp out com.ub.motshelocontributionstracker.app.MainApp
+
 ## Main Features
 - Member registration and contribution tracking
 - Payout scheduling and history
