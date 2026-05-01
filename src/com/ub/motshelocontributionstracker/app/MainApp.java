@@ -12,7 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class MainApp{
+public class MainApp
+{
 
     private static List<Member> members = new ArrayList<>();
     private static double totalSavings = 0.0;
@@ -38,6 +39,10 @@ public class MainApp{
                 case 1:
                     System.out.print("Enter member name: ");
                     String name = scanner.nextLine();
+                    System.out.println("Enter phone number: ");
+                    String phone = scanner.nextLine();
+                    Member newMember = new Member(name, phone);
+                    group.addMember(newMember);
                     members.add(new Member(1, name, "default", 0.0));
                     System.out.println(name + " added successfully.");
                     break;
@@ -51,7 +56,7 @@ public class MainApp{
 
                     Member member = findMember(contributor);
                     if (member != null) {
-                        member.addContribution(amount);
+                        member.contribute(amount);
                         totalSavings += amount;
                         System.out.println("Contribution recorded for " + contributor);
                     } else {
@@ -71,7 +76,7 @@ public class MainApp{
 
                 case 5:
                     running = false;
-                    System.out.println("Exiting Motshelo Tracker. Goodbye!");
+                    System.out.println("You're now exiting Motshelo Tracker. Thank you for passing by!");
                     break;
 
                 default:
