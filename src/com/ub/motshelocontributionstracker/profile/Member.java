@@ -8,7 +8,7 @@ public class Member extends Person
 
     public Member(int memberId, String name, String phoneNumber)
     {
-        super(name, phoneNumber);
+        super(name, phoneNumber, 0.0);
         this.memberId = memberId;
     }
 
