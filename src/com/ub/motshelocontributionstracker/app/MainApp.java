@@ -1,4 +1,4 @@
-package com.ub.motshelocontributionstracker;
+package com.ub.motshelocontributionstracker.app;
 
 import com.ub.motshelocontributionstracker.services.MotsheloGroup;
 import com.ub.motshelocontributionstracker.services.MotsheloService;
