@@ -18,16 +18,16 @@ public class Member extends Person
     }
     public void addContribution(double amount)
     {
-        totalContributions += amount;
+        totalContributions += amount; // Adds an amount to this member's total contributions
     }
     public double getTotalContributions()
     {
-        return totalContributions;
+        return totalContributions; // Returns the total amount this member has contributed so far
     }
 
     @Override
     public String toString()
     {
-        return "ID: " + getMemberId() + " | Name: " + getName() + " | Total: P" + getTotalContributions();
+        return "ID: " + getMemberId() + " | Name: " + getName() + " | Total: P" + getTotalContributions(); // Shows summary ofthis member's details
     }
 }
