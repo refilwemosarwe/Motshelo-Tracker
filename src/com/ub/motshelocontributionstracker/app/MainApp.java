@@ -15,8 +15,8 @@ import java.util.Scanner;
 public class MainApp
 {
 
-    private static List<Member> members = new ArrayList<>();
     private static MotsheloGroup group = new MotsheloGroup("My Group");
+    private static int nextMemberId = 1;
     private static double totalSavings = 0.0;
 
     public static void main(String[] args) {
@@ -44,9 +44,8 @@ public class MainApp
                     String name = scanner.nextLine();
                     System.out.println("Enter phone number: ");
                     String phone = scanner.nextLine();
-                    Member newMember = new Member(name, phone);
+                    Member newMember = new Member(nextMemberId++, name, phone);
                     group.addMember(newMember);
-                    members.add(new Member(1, name, "default", 0.0));
                     System.out.println(name + " added successfully.");
                     break;
 
@@ -73,7 +72,7 @@ public class MainApp
                     break;
 
                 case 4:
-                    for (Member m : members) {
+                    for (Member m : group.getMembers()) {
                         System.out.println(m.getName() + " contributed: P" + m.getTotalContributions()); // shows each member's individual contribution amount
                     }
                     break;
@@ -93,7 +92,7 @@ public class MainApp
 
     private static Member findMember(String name)
     {
-        for (Member m : members) // searches through the group's members and returns the one with a matching name
+        for (Member m : group.getMembers) // searches through the group's members and returns the one with a matching name
         {
             if (m.getName().equalsIgnoreCase(name))
             {
