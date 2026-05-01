@@ -3,9 +3,11 @@ package com.ub.motshelocontributionstracker.services;
 import java.util.ArrayList;
 import java.util.List;
 
+// Keeps a running record of all contributions made in the group
 public class ContributionLog
 {
-    private List<Contribution> contributions;
+    
+    private List<Contribution> contributions; // the list that stores every contribution recorded
 
         public ContributionLog()
         {
@@ -17,22 +19,22 @@ public class ContributionLog
         {
             if (contribution == null)
             {
-                throw new IllegalArgumentException("Contribution cannot be null");
+                throw new IllegalArgumentException("Contribution cannot be null");  // Rejects invalid entries being recorded
             }
-            contributions.add(contribution);
+            contributions.add(contribution); // Adds a contribution to the log
         }
     
         
         public List<Contribution> getContributions()
         {
-            return contributions;
+            return contributions; // Returns the full list of contributions recorded so far
         }
     
-        
+        // Adds up all contribution amounts and returns the grand total
         public double getTotalAmount()
         {
             return contributions.stream()
-                                .mapToDouble(Contribution::getAmount)
+                                .mapToDouble(Contribution::getAmount) 
                                 .sum();
         }
     
@@ -46,6 +48,6 @@ public class ContributionLog
                 sb.append(c).append("\n");
             }
             sb.append("Total: ").append(getTotalAmount());
-            return sb.toString();
+            return sb.toString(); // Returns a summary of all contributions and the total
         }
 }
