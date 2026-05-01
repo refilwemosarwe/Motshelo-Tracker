@@ -16,6 +16,7 @@ public class MainApp
 {
 
     private static List<Member> members = new ArrayList<>();
+    private static MotsheloGroup group = new MotsheloGroup("My Group");
     private static double totalSavings = 0.0;
 
     public static void main(String[] args) {
