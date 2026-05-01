@@ -1,12 +1,14 @@
 # Motshelo / Savings-Group Contributions Tracker
 
 ## Project Overview
-This project is a simple system designed to help community savings groups (*Motshelo*) track member contributions, monitor payouts, and generate transparent financial summaries.
+This project is a simple system designed to help community savings groups better known as; *Motshelo*, track member contributions, monitor payouts, and generate transparent financial summaries.
 
 ## Objectives
 - Record member contributions on a weekly or monthly basis.
 - Provide clear summaries of balances, contributions, and payouts.
 - Improve accountability and reduce manual bookkeeping errors.
+- Improved efficiency in managing group finances.
+- Transparent records that build trust among members.
 
 ## Group Members
 - Refilwe Mosarwe 202400162
@@ -15,7 +17,7 @@ This project is a simple system designed to help community savings groups (*Mots
 - Janet  Lesokola 202405443
 - Botho  Kgwasiwa 202402203
 
-## Domain
+## Chosen Domain;
 **Financial Management / Community Savings**
 
 ## Concept Note
@@ -24,21 +26,25 @@ The system will allow savings groups to digitize their records, making it easier
 - Member balances
 - Upcoming payout schedules
 
-This ensures transparency, efficiency, and trust among group members.
+Which ensures transparency, efficiency, and trust among group members.
 
 ##  Repository URL
 [https://github.com/refilwemosarwe/Motshelo-Tracker](https://github.com/refilwemosarwe/Motshelo-Tracker)
 
-## Features
+## Command Prompt
+javac -d out src\com\ub\motshelocontributionstracker\profile\*.java src\com\ub\motshelocontributionstracker\services\*.java src\com\ub\motshelocontributionstracker\app\MainApp.java
+
+## Execution Promt
+java -cp out com.ub.motshelocontributionstracker.app.MainApp
+
+## Main Features
 - Member registration and contribution tracking
 - Payout scheduling and history
 - Automated reporting
 - Exportable summaries for meetings
 - Interactive menu-driven interface
-  
-## Expected Outcomes
-- Improved efficiency in managing group finances
-- Transparent records that build trust among members
+
+
   
 
 
