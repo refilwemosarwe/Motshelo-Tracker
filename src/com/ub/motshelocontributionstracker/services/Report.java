@@ -2,6 +2,8 @@ package com.ub.motshelocontributionstracker.services;
 
 import com.ub.motshelocontributionstracker.profile.Member;
 import com.ub.motshelocontributionstracker.services.Payout;
+import com.ub.motshelocontributionstracker.services.MotsheloGroup;
+
 import java.util.List;
 
 public class Report 
@@ -22,7 +24,7 @@ public class Report
         System.out.println("\n=== MEMBERS LIST ===");
         for (Member m : members) 
         {
-            System.out.println(m);
+            System.out.println(m); // Prints every member's summary
         }
     }
 
@@ -31,7 +33,7 @@ public class Report
         System.out.println("\n=== MEMBER CONTRIBUTIONS ===");
         for (Member m : members) 
         {
-            System.out.println(m.getName() + ": P" + m.getTotalContributions());
+            System.out.println(m.getName() + ": P" + m.getTotalContributions()); // Prints each member's name and how much they have contributed
         }
     }
 
@@ -41,16 +43,16 @@ public class Report
 
         for (Member m : members) 
         {
-            total += m.getTotalContributions();
+            total += m.getTotalContributions(); // Adds up contributions from all members
         }
 
-        return total;
+        return total; // Returns the grand total
     }
 
     public void showTotalContributions() 
     {
         System.out.println("\n=== TOTAL CONTRIBUTIONS ===");
-        System.out.println("Total: P" + calculateTotalContributions());
+        System.out.println("Total: P" + calculateTotalContributions()); // Prints the total of all contributions made across all members
     }
 
     public void showPayouts() 
@@ -59,13 +61,13 @@ public class Report
 
         if (payouts.isEmpty()) 
         {
-            System.out.println("No payouts yet.");
+            System.out.println("No payouts yet."); // Prints if no payouts have been made yet
             return;
         }
 
         for (Payout p : payouts) 
         {
-            System.out.println(p);
+            System.out.println(p); // Prints the full payout history
         }
     }
 
@@ -76,7 +78,7 @@ public class Report
         if (members.isEmpty()) 
         {
             System.out.println("No members available.");
-            return;
+            return; // Shows who is next in line to receive a payout based on the group's rotation
         }
         
         Member next = group.getNextPayoutMember();
