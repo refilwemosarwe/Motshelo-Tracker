@@ -15,7 +15,7 @@ public class MotsheloService
         members = new ArrayList<>();
         payouts = new ArrayList<>();
         totalSavings = 0.0;
-    }\
+    }
 
     public void addMember(Member member) 
     {
