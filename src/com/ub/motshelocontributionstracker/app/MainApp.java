@@ -1,8 +1,13 @@
 package com.ub.motshelocontributionstracker.app;
 
 import com.ub.motshelocontributionstracker.profile.Member;
+import com.ub.motshelocontributionstracker.profile.Person;
+import com.ub.motshelocontributionstracker.services.Contribution;
+import com.ub.motshelocontributionstracker.services.ContributionLog;
+import com.ub.motshelocontributionstracker.services.Payout;
 import com.ub.motshelocontributionstracker.services.MotsheloGroup;
-
+import com.ub.motshelocontributionstracker.services.Report;
+    
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -38,6 +43,7 @@ public class MainApp
                     String phone = scanner.nextLine();
                     Member newMember = new Member(name, phone);
                     group.addMember(newMember);
+                    members.add(new Member(1, name, "default", 0.0));
                     System.out.println(name + " added successfully.");
                     break;
 
