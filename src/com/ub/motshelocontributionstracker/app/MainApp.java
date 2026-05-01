@@ -1,85 +1,96 @@
-package com.ub.motshelocontributionstracker.app;
+package com.ub.motshelocontributionstracker;
 
-import com.ub.motshelocontributionstracker.profile.Member;
-import com.ub.motshelocontributionstracker.profile.Person;
-import com.ub.motshelocontributionstracker.services.Contribution;
-import com.ub.motshelocontributionstracker.services.ContributionLog;
-import com.ub.motshelocontributionstracker.services.Payout;
 import com.ub.motshelocontributionstracker.services.MotsheloGroup;
+import com.ub.motshelocontributionstracker.services.MotsheloService;
 import com.ub.motshelocontributionstracker.services.Report;
-    
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
-public class MainApp
+public class Main
 {
-
-    private static MotsheloGroup group = new MotsheloGroup("My Group");
-    private static int nextMemberId = 1;
-    private static double totalSavings = 0.0;
-
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         Scanner scanner = new Scanner(System.in);
+
+        MotsheloService service = new MotsheloService();
+        MotsheloGroup   group   = new MotsheloGroup("My Motshelo");
+
+        // Report holds the LIVE service — members added later still appear
+        Report report = new Report(service, group);
+
         boolean running = true;
 
-        System.out.println("== Motshelo Savings Group Tracker ==");
-        
-        while (running) // shows the menu until the user chooses to exit
+        while (running)
         {
-            System.out.println("\nChoose an option:");
-            System.out.println("1. Add Member");
-            System.out.println("2. Record Contribution");
-            System.out.println("3. View Total Savings");
-            System.out.println("4. View Member Contributions");
-            System.out.println("5. Exit");
+            System.out.println("\n========== MOTSHELO MENU ==========");
+            System.out.println("1. Add member");
+            System.out.println("2. Record contribution");
+            System.out.println("3. Show all members");
+            System.out.println("4. Show member contributions");
+            System.out.println("5. Show total contributions");
+            System.out.println("6. Show payout history");
+            System.out.println("7. Show next recipient");
+            System.out.println("8. Process payout");
+            System.out.println("9. Group summary");
+            System.out.println("0. Exit");
+            System.out.print("Choose: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine(); // consume newline
 
-            switch (choice) {
+            switch (choice)
+            {
                 case 1:
-                    // collect member details and add them to the group
-                    System.out.print("Enter member name: ");
+                    System.out.print("Enter member ID: ");
+                    int id = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.print("Enter name: ");
                     String name = scanner.nextLine();
-                    System.out.println("Enter phone number: ");
+                    System.out.print("Enter phone: ");
                     String phone = scanner.nextLine();
-                    Member newMember = new Member(nextMemberId++, name, phone);
-                    group.addMember(newMember);
-                    System.out.println(name + " added successfully.");
+                    report.addMember(id, name, phone);
                     break;
 
                 case 2:
-                    // find the member by name and record their contribution
                     System.out.print("Enter member name: ");
-                    String contributor = scanner.nextLine();
-                    System.out.print("Enter contribution amount: ");
+                    String cName = scanner.nextLine();
+                    System.out.print("Enter amount (P): ");
                     double amount = scanner.nextDouble();
                     scanner.nextLine();
-
-                    Member member = findMember(contributor);
-                    if (member != null) {
-                        member.contribute(amount);
-                        totalSavings += amount;
-                        System.out.println("Contribution recorded for " + contributor);
-                    } else {
-                        System.out.println("Error,member not found.");
-                    }
+                    report.recordContribution(cName, amount);
                     break;
 
                 case 3:
-                    System.out.println("Total Savings: P" + totalSavings); // add up contributions from all members and display the total
+                    report.showAllMembers();
                     break;
 
                 case 4:
-                    for (Member m : group.getMembers()) {
-                        System.out.println(m.getName() + " contributed: P" + m.getTotalContributions()); // shows each member's individual contribution amount
-                    }
+                    report.showMemberContributions();
                     break;
 
                 case 5:
-                    running = false; // stops the loop and exits the program
-                    System.out.println("You're now exiting Motshelo Tracker. Thank you for passing by!");
+                    report.showTotalContributions();
+                    break;
+
+                case 6:
+                    report.showPayouts();
+                    break;
+
+                case 7:
+                    report.showNextRecipient();
+                    break;
+
+                case 8:
+                    report.processPayout();
+                    break;
+
+                case 9:
+                    report.showGroupSummary();
+                    break;
+
+                case 0:
+                    running = false;
+                    System.out.println("Goodbye!");
                     break;
 
                 default:
@@ -88,17 +99,5 @@ public class MainApp
         }
 
         scanner.close();
-    }
-
-    private static Member findMember(String name)
-    {
-        for (Member m : group.getMembers()) // searches through the group's members and returns the one with a matching name
-        {
-            if (m.getName().equalsIgnoreCase(name))
-            {
-                return m;
-            }
-        }
-        return null; // returns null if no match is found 
     }
 }
