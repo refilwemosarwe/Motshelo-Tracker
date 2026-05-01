@@ -92,7 +92,7 @@ public class MainApp
 
     private static Member findMember(String name)
     {
-        for (Member m : group.getMembers) // searches through the group's members and returns the one with a matching name
+        for (Member m : group.getMembers()) // searches through the group's members and returns the one with a matching name
         {
             if (m.getName().equalsIgnoreCase(name))
             {
