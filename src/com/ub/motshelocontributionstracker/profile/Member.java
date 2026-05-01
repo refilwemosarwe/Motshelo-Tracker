@@ -6,10 +6,9 @@ public class Member extends Person
     private int memberId;
     private double totalContributions = 0;
 
-    public Member(int memberId, String name, String phoneNumber, double totalContributions)
+    public Member(int memberId, String name, String phoneNumber)
     {
-        super(name, phoneNumber, totalContributions);
-
+        super(name, phoneNumber);
         this.memberId = memberId;
     }
 
