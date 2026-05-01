@@ -23,8 +23,9 @@ public class MainApp
         boolean running = true;
 
         System.out.println("== Motshelo Savings Group Tracker ==");
-
-        while (running) {
+        
+        while (running) // shows the menu until the user chooses to exit
+        {
             System.out.println("\nChoose an option:");
             System.out.println("1. Add Member");
             System.out.println("2. Record Contribution");
@@ -33,10 +34,11 @@ public class MainApp
             System.out.println("5. Exit");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // nextline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
+                    // collect member details and add them to the group
                     System.out.print("Enter member name: ");
                     String name = scanner.nextLine();
                     System.out.println("Enter phone number: ");
@@ -48,6 +50,7 @@ public class MainApp
                     break;
 
                 case 2:
+                    // find the member by name and record their contribution
                     System.out.print("Enter member name: ");
                     String contributor = scanner.nextLine();
                     System.out.print("Enter contribution amount: ");
@@ -65,17 +68,17 @@ public class MainApp
                     break;
 
                 case 3:
-                    System.out.println("Total Savings: P" + totalSavings);
+                    System.out.println("Total Savings: P" + totalSavings); // add up contributions from all members and display the total
                     break;
 
                 case 4:
                     for (Member m : members) {
-                        System.out.println(m.getName() + " contributed: P" + m.getTotalContributions());
+                        System.out.println(m.getName() + " contributed: P" + m.getTotalContributions()); // shows each member's individual contribution amount
                     }
                     break;
 
                 case 5:
-                    running = false;
+                    running = false; // stops the loop and exits the program
                     System.out.println("You're now exiting Motshelo Tracker. Thank you for passing by!");
                     break;
 
@@ -87,12 +90,15 @@ public class MainApp
         scanner.close();
     }
 
-    private static Member findMember(String name) {
-        for (Member m : members) {
-            if (m.getName().equalsIgnoreCase(name)) {
+    private static Member findMember(String name)
+    {
+        for (Member m : members) // searches through the group's members and returns the one with a matching name
+        {
+            if (m.getName().equalsIgnoreCase(name))
+            {
                 return m;
             }
         }
-        return null;
+        return null; // returns null if no match is found 
     }
 }
